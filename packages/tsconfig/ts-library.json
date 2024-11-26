@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "TypeScript Library",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "paths": {
+      "@pkgs/*": [
+        "../*"
+      ]
+    },
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "module": "ESNext",
+    "target": "es6"
+  },
+  "include": [
+    "../**/*"
+  ]
+}
