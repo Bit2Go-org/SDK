@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example - html</title>
+    <script src="../../packages/web/lib/index.global.js"></script>
+</head>
+
+<body>
+    <script>
+        let props = {},
+            more = ''
+    </script>
+    <button
+        onclick="bit2goWeb.createInvoice().openModal({...props, ...(more ? Object.fromEntries(more.split('\n').map(line=>line.split(':'))): {} )})">show
+        modal</button>
+    <div style="border: 1px solid black; padding: 4px;">
+        <h2>Env Config</h2>
+        <div>
+            <span>merchant:</span>
+            <input oninput="bit2goWeb.setConfig({merchant:this.value})" />
+        </div>
+        <div>
+            <span>sign:</span>
+            <input oninput="bit2goWeb.setConfig({sign:this.value})" />
+        </div>
+    </div>
+
+    <div style="border: 1px solid black; padding: 4px; margin-top: 10px;">
+        <h2>Invoice Props</h2>
+        <div>
+            <span>amount:</span>
+            <input oninput="props.amount = this.value" />
+        </div>
+        <div>
+            <span>callback_url:</span>
+            <input oninput="props.callback_url = this.value" />
+        </div>
+        <div>
+            <span>currency:</span>
+            <input oninput="props.currency = this.value" />
+        </div>
+        <div>
+            <span>order_id:</span>
+            <input oninput="props.order_id = this.value" />
+        </div>
+        <div>
+            <span>more, multi line `key: value`</span>
+            <textarea oninput="more = this.value"></textarea>
+        </div>
+    </div>
+</body>
+
+</html>

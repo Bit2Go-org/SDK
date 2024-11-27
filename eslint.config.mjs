@@ -2,7 +2,6 @@ import antfu from '@antfu/eslint-config'
 
 export default antfu(
   {
-    react: true,
     rules: {
       'node/prefer-global/process': 'off',
       'ts/no-require-imports': 'off',
@@ -11,5 +10,6 @@ export default antfu(
       'no-async-promise-executor': 'off',
       'no-useless-return': 'off',
     },
+    ignores: ['lib'],
   },
 )
