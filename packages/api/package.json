@@ -1,15 +1,21 @@
 {
   "name": "@bit2go/api",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "license": "MIT",
   "homepage": "https://github.com/Bit2Go-org/SDK",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "run-s build:*",
-    "build:module": "tsup index.ts --clean --out-dir lib --dts --format esm,cjs --target esnext --metafile",
-    "build:global": "tsup index.ts --out-dir lib --dts --format iife --global-name bit2goApi --minify --target esnext --platform browser --metafile"
+    "build:module": "tsup index.ts --clean --out-dir lib --dts --format esm,cjs --target esnext",
+    "build:global": "tsup index.ts --out-dir lib --dts --format iife --global-name bit2goApi --minify --target esnext --platform browser"
   },
   "dependencies": {
     "axios": "^1.7.8",
